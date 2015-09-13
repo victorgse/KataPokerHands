@@ -6,9 +6,9 @@ import static org.junit.Assert.*;
 public class CardTest {
 
     @Test
-    public void testSomeLibraryMethod() {
+    public void testSomeCardMethod() {
         Card classUnderTest = new Card();
-        assertTrue("someLibraryMethod should return 'true'", classUnderTest.someCardMethod());
+        assertTrue("someCardMethod should return 'true'", classUnderTest.someCardMethod());
     }
 
 }
