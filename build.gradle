@@ -1,8 +1,8 @@
 apply plugin: 'java'
 apply plugin: 'eclipse'
+apply plugin: 'info.solidsoft.pitest'
 apply plugin: 'jacoco'
 apply plugin: 'sonar-runner'
-apply plugin: 'info.solidsoft.pitest'
 
 repositories {
     mavenCentral()
@@ -19,6 +19,10 @@ buildscript {
 
 pitest {
     targetClasses = ['poker.*'];
+}
+
+jacoco {
+    toolVersion = "0.7.1.201405082137"
 }
 
 jar {
