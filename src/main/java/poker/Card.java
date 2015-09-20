@@ -1,13 +1,41 @@
 package poker;
 
-public class Card {
+import java.util.HashMap;
+import java.util.Map;
 
-    public enum Suit {
-        CLUBS, DIAMONDS, HEARTS, SPADES
-    }
+public class Card {
 
     public enum Value {
         TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING, ACE
+    }
+    
+    public enum Suit {
+        CLUBS, DIAMONDS, HEARTS, SPADES
+    }
+    
+    private static final Map<Character, Value> valuesMap = new HashMap<Character, Value>();
+    static {
+        valuesMap.put('2', Value.TWO);
+        valuesMap.put('3', Value.THREE);
+        valuesMap.put('4', Value.FOUR);
+        valuesMap.put('5', Value.FIVE);
+        valuesMap.put('6', Value.SIX);
+        valuesMap.put('7', Value.SEVEN);
+        valuesMap.put('8', Value.EIGHT);
+        valuesMap.put('9', Value.NINE);
+        valuesMap.put('T', Value.TEN);
+        valuesMap.put('J', Value.JACK);
+        valuesMap.put('Q', Value.QUEEN);
+        valuesMap.put('K', Value.KING);
+        valuesMap.put('A', Value.ACE);
+    }
+    
+    private static final Map<Character, Suit> suitsMap = new HashMap<Character, Suit>();
+    static {
+        suitsMap.put('C', Suit.CLUBS);
+        suitsMap.put('D', Suit.DIAMONDS);
+        suitsMap.put('H', Suit.HEARTS);
+        suitsMap.put('S', Suit.SPADES);
     }
 
     private Value value;
@@ -19,80 +47,11 @@ public class Card {
     }
 
     private Value extractValue(String card) {
-        char ch = card.charAt(0);
-        Value tempValue;
-
-        switch (ch) {
-        case '2':
-            tempValue = Value.TWO;
-            break;
-        case '3':
-            tempValue = Value.THREE;
-            break;
-        case '4':
-            tempValue = Value.FOUR;
-            break;
-        case '5':
-            tempValue = Value.FIVE;
-            break;
-        case '6':
-            tempValue = Value.SIX;
-            break;
-        case '7':
-            tempValue = Value.SEVEN;
-            break;
-        case '8':
-            tempValue = Value.EIGHT;
-            break;
-        case '9':
-            tempValue = Value.NINE;
-            break;
-        case 'T':
-            tempValue = Value.TEN;
-            break;
-        case 'J':
-            tempValue = Value.JACK;
-            break;
-        case 'Q':
-            tempValue = Value.QUEEN;
-            break;
-        case 'K':
-            tempValue = Value.KING;
-            break;
-        case 'A':
-            tempValue = Value.ACE;
-            break;
-        default:
-            tempValue = null;
-            break;
-        }
-
-        return tempValue;
+        return valuesMap.get(card.charAt(0));
     }
 
     private Suit extractSuit(String card) {
-        char ch = card.charAt(1);
-        Suit tempSuit;
-
-        switch (ch) {
-        case 'C':
-            tempSuit = Suit.CLUBS;
-            break;
-        case 'D':
-            tempSuit = Suit.DIAMONDS;
-            break;
-        case 'H':
-            tempSuit = Suit.HEARTS;
-            break;
-        case 'S':
-            tempSuit = Suit.SPADES;
-            break;
-        default:
-            tempSuit = null;
-            break;
-        }
-
-        return tempSuit;
+        return suitsMap.get(card.charAt(1));
     }
 
     public Value getValue() {
