@@ -45,6 +45,9 @@ public class CardTest {
 
         cardUnderTest = new Card("AC");
         assertEquals(Card.Value.ACE, cardUnderTest.getValue());
+        
+        cardUnderTest = new Card("/C");
+        assertEquals(null, cardUnderTest.getValue());
     }
 
     @Test
@@ -60,6 +63,9 @@ public class CardTest {
 
         cardUnderTest = new Card("2S");
         assertEquals(Card.Suit.SPADES, cardUnderTest.getSuit());
+        
+        cardUnderTest = new Card("2/");
+        assertEquals(null, cardUnderTest.getSuit());
     }
 
 }
