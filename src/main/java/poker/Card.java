@@ -20,79 +20,79 @@ public class Card {
 
 	private Value extractValue(String card) {
 		char ch = card.charAt(0);
-		Value value;
+		Value tempValue;
 
 		switch (ch) {
 		case '2':
-			value = Value.TWO;
+			tempValue = Value.TWO;
 			break;
 		case '3':
-			value = Value.THREE;
+			tempValue = Value.THREE;
 			break;
 		case '4':
-			value = Value.FOUR;
+			tempValue = Value.FOUR;
 			break;
 		case '5':
-			value = Value.FIVE;
+			tempValue = Value.FIVE;
 			break;
 		case '6':
-			value = Value.SIX;
+			tempValue = Value.SIX;
 			break;
 		case '7':
-			value = Value.SEVEN;
+			tempValue = Value.SEVEN;
 			break;
 		case '8':
-			value = Value.EIGHT;
+			tempValue = Value.EIGHT;
 			break;
 		case '9':
-			value = Value.NINE;
+			tempValue = Value.NINE;
 			break;
 		case 'T':
-			value = Value.TEN;
+			tempValue = Value.TEN;
 			break;
 		case 'J':
-			value = Value.JACK;
+			tempValue = Value.JACK;
 			break;
 		case 'Q':
-			value = Value.QUEEN;
+			tempValue = Value.QUEEN;
 			break;
 		case 'K':
-			value = Value.KING;
+			tempValue = Value.KING;
 			break;
 		case 'A':
-			value = Value.ACE;
+			tempValue = Value.ACE;
 			break;
 		default:
-			value = null;
+			tempValue = null;
 			break;
 		}
 
-		return value;
+		return tempValue;
 	}
 
 	private Suit extractSuit(String card) {
 		char ch = card.charAt(1);
-		Suit suit;
+		Suit tempSuit;
 
 		switch (ch) {
 		case 'C':
-			suit = Suit.CLUBS;
+			tempSuit = Suit.CLUBS;
 			break;
 		case 'D':
-			suit = Suit.DIAMONDS;
+			tempSuit = Suit.DIAMONDS;
 			break;
 		case 'H':
-			suit = Suit.HEARTS;
+			tempSuit = Suit.HEARTS;
 			break;
 		case 'S':
-			suit = Suit.SPADES;
+			tempSuit = Suit.SPADES;
 			break;
 		default:
-			suit = null;
+			tempSuit = null;
 			break;
 		}
 
-		return suit;
+		return tempSuit;
 	}
 
 	public Value getValue() {

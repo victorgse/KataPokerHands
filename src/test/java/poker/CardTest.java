@@ -6,7 +6,7 @@ import static org.junit.Assert.*;
 public class CardTest {
 
     @Test
-    public void testCard_getValue() {
+    public void testCardGetValue() {
         Card cardUnderTest = new Card("2C");
         assertEquals(Card.Value.TWO, cardUnderTest.getValue());
         
@@ -48,7 +48,7 @@ public class CardTest {
     }
     
     @Test
-	public void testCard_getSuit() {
+	public void testCardGetSuit() {
     	Card cardUnderTest = new Card("2C");
     	assertEquals(Card.Suit.CLUBS, cardUnderTest.getSuit());
     	
