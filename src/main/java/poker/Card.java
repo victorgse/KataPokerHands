@@ -1,11 +1,11 @@
 package poker;
 
 public class Card {
-	
+
 	public enum Suit {
 		CLUBS, DIAMONDS, HEARTS, SPADES
 	}
-	
+
 	public enum Value {
 		TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING, ACE
 	}
