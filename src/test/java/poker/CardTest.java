@@ -67,5 +67,20 @@ public class CardTest {
         cardUnderTest = new Card("2/");
         assertEquals(null, cardUnderTest.getSuit());
     }
+    
+    @Test
+    public void testCardCompareTo() {
+        Card cardOne = new Card("2S");
+        Card cardTwo = new Card("AC");
+        assertTrue(cardOne.compareTo(cardTwo) < 0);
+        
+        cardOne = new Card("9H");
+        cardTwo = new Card("6C");
+        assertTrue(cardOne.compareTo(cardTwo) > 0);
+        
+        cardOne = new Card("JH");
+        cardTwo = new Card("JD");
+        assertTrue(cardOne.compareTo(cardTwo) == 0);
+    }
 
 }

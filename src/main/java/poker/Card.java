@@ -3,7 +3,7 @@ package poker;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Card {
+public class Card implements Comparable<Card> {
 
     public enum Value {
         TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING, ACE
@@ -60,6 +60,11 @@ public class Card {
 
     public Suit getSuit() {
         return suit;
+    }
+
+    @Override
+    public int compareTo(Card otherCard) {
+        return this.value.compareTo(otherCard.value);
     }
 
 }
