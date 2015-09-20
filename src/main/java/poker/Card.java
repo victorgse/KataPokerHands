@@ -3,11 +3,11 @@ package poker;
 public class Card {
 	
 	public enum Suit {
-		Clubs, Diamonds, Hearts, Spades
+		CLUBS, DIAMONDS, HEARTS, SPADES
 	}
 	
 	public enum Value {
-		Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten, Jack, Queen, King, Ace
+		TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING, ACE
 	}
 
 	private Value value;
@@ -24,43 +24,43 @@ public class Card {
 
 		switch (ch) {
 		case '2':
-			value = Value.Two;
+			value = Value.TWO;
 			break;
 		case '3':
-			value = Value.Three;
+			value = Value.THREE;
 			break;
 		case '4':
-			value = Value.Four;
+			value = Value.FOUR;
 			break;
 		case '5':
-			value = Value.Five;
+			value = Value.FIVE;
 			break;
 		case '6':
-			value = Value.Six;
+			value = Value.SIX;
 			break;
 		case '7':
-			value = Value.Seven;
+			value = Value.SEVEN;
 			break;
 		case '8':
-			value = Value.Eight;
+			value = Value.EIGHT;
 			break;
 		case '9':
-			value = Value.Nine;
+			value = Value.NINE;
 			break;
 		case 'T':
-			value = Value.Ten;
+			value = Value.TEN;
 			break;
 		case 'J':
-			value = Value.Jack;
+			value = Value.JACK;
 			break;
 		case 'Q':
-			value = Value.Queen;
+			value = Value.QUEEN;
 			break;
 		case 'K':
-			value = Value.King;
+			value = Value.KING;
 			break;
 		case 'A':
-			value = Value.Ace;
+			value = Value.ACE;
 			break;
 		default:
 			value = null;
@@ -76,16 +76,16 @@ public class Card {
 
 		switch (ch) {
 		case 'C':
-			suit = Suit.Clubs;
+			suit = Suit.CLUBS;
 			break;
 		case 'D':
-			suit = Suit.Diamonds;
+			suit = Suit.DIAMONDS;
 			break;
 		case 'H':
-			suit = Suit.Hearts;
+			suit = Suit.HEARTS;
 			break;
 		case 'S':
-			suit = Suit.Spades;
+			suit = Suit.SPADES;
 			break;
 		default:
 			suit = null;
