@@ -66,5 +66,10 @@ public class Card implements Comparable<Card> {
     public int compareTo(Card otherCard) {
         return this.value.compareTo(otherCard.value);
     }
+    
+    @Override
+    public boolean equals(Object otherCard) {
+        return this.compareTo((Card) otherCard) == 0;
+    }
 
 }

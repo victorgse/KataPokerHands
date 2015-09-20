@@ -82,5 +82,16 @@ public class CardTest {
         cardTwo = new Card("JD");
         assertTrue(cardOne.compareTo(cardTwo) == 0);
     }
+    
+    @Test
+    public void testCardEquals() {
+        Card cardOne = new Card("2S");
+        Card cardTwo = new Card("AC");
+        assertEquals(false, cardOne.equals(cardTwo));
+        
+        cardOne = new Card("JH");
+        cardTwo = new Card("JD");
+        assertEquals(true, cardOne.equals(cardTwo));
+    }
 
 }
