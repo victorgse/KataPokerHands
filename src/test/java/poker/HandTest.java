@@ -18,5 +18,14 @@ public class HandTest {
         assertEquals(false, handUnderTest.contains(new Card("2D")));
         assertEquals(false, handUnderTest.contains(new Card("AD")));
     }
+    
+    @Test
+    public void testHandIsFlush() {
+        Hand handUnderTest = new Hand("2S 8S AS QS 3S");
+        assertEquals(true, handUnderTest.isFlush());
+        
+        handUnderTest = new Hand("2S 8S AS QS 3C");
+        assertEquals(false, handUnderTest.isFlush());
+    }
 
 }
