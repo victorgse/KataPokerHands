@@ -106,6 +106,7 @@ public class CardTest {
         Card cardOne = new Card("JH");
         Card cardTwo = new Card("JD");
         assertEquals(cardOne.hashCode(), cardTwo.hashCode());
+        assertEquals(31 + Card.Value.JACK.hashCode(), cardOne.hashCode());
     }
 
 }
