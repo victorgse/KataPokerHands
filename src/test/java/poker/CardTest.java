@@ -94,7 +94,10 @@ public class CardTest {
         assertEquals(true, cardOne.equals(cardTwo));
         
         assertEquals(true, cardOne.equals(cardOne));
-        assertEquals(false, cardOne.equals(null));
+        
+        cardTwo = null;
+        assertEquals(false, cardOne.equals(cardTwo));
+        
         assertEquals(false, cardOne.equals(new Object()));
     }
     
