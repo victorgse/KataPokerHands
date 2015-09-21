@@ -66,10 +66,27 @@ public class Card implements Comparable<Card> {
     public int compareTo(Card otherCard) {
         return this.value.compareTo(otherCard.value);
     }
-    
+
     @Override
-    public boolean equals(Object otherCard) {
-        return this.compareTo((Card) otherCard) == 0;
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((value == null) ? 0 : value.hashCode());
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Card other = (Card) obj;
+        if (value != other.value)
+            return false;
+        return true;
     }
 
 }
