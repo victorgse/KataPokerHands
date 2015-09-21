@@ -80,14 +80,8 @@ public class Card implements Comparable<Card> {
     public boolean equals(Object obj) {
         if (this == obj)
             return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
         Card other = (Card) obj;
-        if (suit != other.suit)
-            return false;
-        if (value != other.value)
+        if (obj == null || getClass() != obj.getClass() || suit != other.suit || value != other.value)
             return false;
         return true;
     }
