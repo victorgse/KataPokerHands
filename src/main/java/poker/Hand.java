@@ -1,11 +1,11 @@
 package poker;
 
+import java.util.HashSet;
 import java.util.Set;
-import java.util.TreeSet;
 
 public class Hand {
     
-    private Set<Card> cards = new TreeSet<Card>();
+    private Set<Card> cards = new HashSet<Card>();
     
     public Hand(String hand) {
         String[] cardTokens = hand.split(" ");
