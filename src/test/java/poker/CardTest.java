@@ -97,5 +97,12 @@ public class CardTest {
         assertEquals(false, cardOne.equals(null));
         assertEquals(false, cardOne.equals(new Object()));
     }
+    
+    @Test
+    public void testCardHashCode() {
+        Card cardOne = new Card("JH");
+        Card cardTwo = new Card("JD");
+        assertEquals(cardOne.hashCode(), cardTwo.hashCode());
+    }
 
 }
