@@ -89,9 +89,13 @@ public class CardTest {
         Card cardTwo = new Card("AC");
         assertEquals(false, cardOne.equals(cardTwo));
         
+        cardOne = new Card("QC");
+        cardTwo = new Card("QC");
+        assertEquals(true, cardOne.equals(cardTwo));
+        
         cardOne = new Card("JH");
         cardTwo = new Card("JD");
-        assertEquals(true, cardOne.equals(cardTwo));
+        assertEquals(false, cardOne.equals(cardTwo));
         
         assertEquals(true, cardOne.equals(cardOne));
         
@@ -104,11 +108,12 @@ public class CardTest {
     @Test
     public void testCardHashCode() {
         Card cardOne = new Card("JH");
-        Card cardTwo = new Card("JD");
+        Card cardTwo = new Card("JH");
         assertEquals(cardOne.hashCode(), cardTwo.hashCode());
         
-        cardOne = new Card("QS");
-        assertEquals(31 + Card.Value.QUEEN.hashCode(), cardOne.hashCode());
+        cardOne = new Card("8H");
+        cardTwo = new Card("8S");
+        assertNotEquals(cardOne.hashCode(), cardTwo.hashCode());
     }
 
 }
