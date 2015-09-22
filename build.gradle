@@ -29,6 +29,12 @@ sonarRunner {
     toolVersion = '2.4'
 }
 
+sonarRunner {
+    sonarProperties {
+        property 'sonar.projectName', 'KataTexasHoldEm'
+    }
+}
+
 jar {
     baseName = 'kata-texas-hold-em'
     version =  '0.1.0'
