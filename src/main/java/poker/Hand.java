@@ -65,6 +65,24 @@ public class Hand {
         return cardRank;
     }
     
+    public List<Card> getCards() {
+        List<Card> cardsList = new ArrayList<Card>(cards);
+        Collections.sort(cardsList);
+        return cardsList;
+    }
+
+    public Set<Card.Value> getPairs() {
+        return pairs;
+    }
+
+    public Card.Value getThreeOfAKind() {
+        return threeOfAKind;
+    }
+
+    public Card.Value getFourOfAKind() {
+        return fourOfAKind;
+    }
+
     public Rank getRank() {
         return this.rank;
     }
@@ -90,8 +108,7 @@ public class Hand {
     }
     
     public boolean isStraight() {
-        List<Card> cardsList = new ArrayList<Card>(cards);
-        Collections.sort(cardsList);
+        List<Card> cardsList = getCards();
         for (int i = 1; i < cardsList.size(); i++) {
             if ((cardsList.get(i).getValue().ordinal() - cardsList.get(i - 1).getValue().ordinal()) != 1) {
                 return false;
