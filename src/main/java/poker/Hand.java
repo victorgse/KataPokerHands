@@ -1,6 +1,9 @@
 package poker;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import poker.Card.Suit;
@@ -22,6 +25,17 @@ public class Hand {
 
     public int size() {
         return cards.size();
+    }
+    
+    public boolean isStraight() {
+        List<Card> cardsList = new ArrayList<Card>(cards);
+        Collections.sort(cardsList);
+        for (int i = 1; i < cardsList.size(); i++) {
+            if ((cardsList.get(i).getValue().ordinal() - cardsList.get(i - 1).getValue().ordinal()) != 1) {
+                return false;
+            }
+        }
+        return true;
     }
     
     public boolean isFlush() {

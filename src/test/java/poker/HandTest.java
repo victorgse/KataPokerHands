@@ -20,6 +20,15 @@ public class HandTest {
     }
     
     @Test
+    public void testHandIsStraight() {
+        Hand handUnderTest = new Hand("8S 9S TS JS QS");
+        assertEquals(true, handUnderTest.isStraight());
+        
+        handUnderTest = new Hand("2S 8S AS QS 3C");
+        assertEquals(false, handUnderTest.isStraight());
+    }
+    
+    @Test
     public void testHandIsFlush() {
         Hand handUnderTest = new Hand("2S 8S AS QS 3S");
         assertEquals(true, handUnderTest.isFlush());
