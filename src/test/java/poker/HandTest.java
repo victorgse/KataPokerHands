@@ -20,6 +20,33 @@ public class HandTest {
     }
     
     @Test
+    public void testHandHasPair() {
+        Hand handUnderTest = new Hand("2S 2H TC JD QD");
+        assertEquals(true, handUnderTest.hasPair());
+        
+        handUnderTest = new Hand("2S 8D AS QS 3C");
+        assertEquals(false, handUnderTest.hasPair());
+    }
+    
+    @Test
+    public void testHandHasTwoPairs() {
+        Hand handUnderTest = new Hand("2S 2H TC QD QD");
+        assertEquals(true, handUnderTest.hasTwoPairs());
+        
+        handUnderTest = new Hand("2S 2D AS QS 3C");
+        assertEquals(false, handUnderTest.hasTwoPairs());
+    }
+    
+    @Test
+    public void testHandHasThreeOfAKind() {
+        Hand handUnderTest = new Hand("2S 2H 2C KC QD");
+        assertEquals(true, handUnderTest.hasThreeOfAKind());
+        
+        handUnderTest = new Hand("2S 2D AS QS 9C");
+        assertEquals(false, handUnderTest.hasThreeOfAKind());
+    }
+    
+    @Test
     public void testHandIsStraight() {
         Hand handUnderTest = new Hand("8S 9S TC JS QS");
         assertEquals(true, handUnderTest.isStraight());
@@ -35,6 +62,24 @@ public class HandTest {
         
         handUnderTest = new Hand("2S 8S AS QS 3C");
         assertEquals(false, handUnderTest.isFlush());
+    }
+    
+    @Test
+    public void testHandIsFullHouse() {
+        Hand handUnderTest = new Hand("8H 8S 8D QS QC");
+        assertEquals(true, handUnderTest.isFullHouse());
+        
+        handUnderTest = new Hand("9H 9S 9D QS 3C");
+        assertEquals(false, handUnderTest.isFullHouse());
+    }
+    
+    @Test
+    public void testHandHasFourOfAKind() {
+        Hand handUnderTest = new Hand("2S 2H 2C 2D QD");
+        assertEquals(true, handUnderTest.hasFourOfAKind());
+        
+        handUnderTest = new Hand("4S 4D 4C QS 9C");
+        assertEquals(false, handUnderTest.hasFourOfAKind());
     }
     
     @Test
