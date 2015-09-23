@@ -93,5 +93,35 @@ public class HandTest {
         handUnderTest = new Hand("8S 9S TC JS QS");
         assertEquals(false, handUnderTest.isStraightFlush());
     }
+    
+    @Test
+    public void testHandGetRank() {
+        Hand handUnderTest = new Hand("9S TS JS QS KS");
+        assertEquals(Hand.Rank.STRAIGHTFLUSH, handUnderTest.getRank());
+        
+        handUnderTest = new Hand("2S 2H 2C 2D QD");
+        assertEquals(Hand.Rank.FOUROFAKIND, handUnderTest.getRank());
+        
+        handUnderTest = new Hand("8H 8S 8D QS QC");
+        assertEquals(Hand.Rank.FULLHOUSE, handUnderTest.getRank());
+        
+        handUnderTest = new Hand("2S 8S AS QS 3S");
+        assertEquals(Hand.Rank.FLUSH, handUnderTest.getRank());
+        
+        handUnderTest = new Hand("8S 9S TC JS QS");
+        assertEquals(Hand.Rank.STRAIGHT, handUnderTest.getRank());
+        
+        handUnderTest = new Hand("2S 2H 2C KC QD");
+        assertEquals(Hand.Rank.THREEOFAKIND, handUnderTest.getRank());
+        
+        handUnderTest = new Hand("2S 2H TC QD QD");
+        assertEquals(Hand.Rank.TWOPAIRS, handUnderTest.getRank());
+        
+        handUnderTest = new Hand("2S 2H TC JD QD");
+        assertEquals(Hand.Rank.PAIR, handUnderTest.getRank());
+        
+        handUnderTest = new Hand("2S 4H 9C JD QD");
+        assertEquals(Hand.Rank.HIGHCARD, handUnderTest.getRank());
+    }
 
 }

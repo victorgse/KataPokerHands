@@ -10,10 +10,15 @@ import poker.Card.Suit;
 
 public class Hand {
     
+    public enum Rank {
+        HIGHCARD, PAIR, TWOPAIRS, THREEOFAKIND, STRAIGHT, FLUSH, FULLHOUSE, FOUROFAKIND, STRAIGHTFLUSH
+    }
+    
     private Set<Card> cards = new HashSet<Card>();
     private Set<Card.Value> pairs = new HashSet<Card.Value>();
     private Card.Value threeOfAKind = null;
     private Card.Value fourOfAKind = null;
+    private Rank rank;
     
     public Hand(String hand) {
         String[] cardTokens = hand.split(" ");
@@ -33,6 +38,35 @@ public class Hand {
                 fourOfAKind = cardValue;
             }
         }
+        rank = determineRank();
+    }
+    
+    private Rank determineRank() {
+        Rank cardRank;
+        if (this.isStraightFlush()) {
+            cardRank = Rank.STRAIGHTFLUSH;
+        } else if (this.hasFourOfAKind()) {
+            cardRank = Rank.FOUROFAKIND;
+        } else if (this.isFullHouse()) {
+            cardRank = Rank.FULLHOUSE;
+        } else if (this.isFlush()) {
+            cardRank = Rank.FLUSH;
+        } else if (this.isStraight()) {
+            cardRank = Rank.STRAIGHT;
+        } else if (this.hasThreeOfAKind()) {
+            cardRank = Rank.THREEOFAKIND;
+        } else if (this.hasTwoPairs()) {
+            cardRank = Rank.TWOPAIRS;
+        } else if (this.hasPair()) {
+            cardRank = Rank.PAIR;
+        } else {
+            cardRank = Rank.HIGHCARD;
+        }
+        return cardRank;
+    }
+    
+    public Rank getRank() {
+        return this.rank;
     }
 
     public boolean contains(Card card) {
