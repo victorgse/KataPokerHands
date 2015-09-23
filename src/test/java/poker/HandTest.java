@@ -21,7 +21,7 @@ public class HandTest {
     
     @Test
     public void testHandIsStraight() {
-        Hand handUnderTest = new Hand("8S 9S TS JS QS");
+        Hand handUnderTest = new Hand("8S 9S TC JS QS");
         assertEquals(true, handUnderTest.isStraight());
         
         handUnderTest = new Hand("2S 8S AS QS 3C");
@@ -35,6 +35,18 @@ public class HandTest {
         
         handUnderTest = new Hand("2S 8S AS QS 3C");
         assertEquals(false, handUnderTest.isFlush());
+    }
+    
+    @Test
+    public void testHandIsStraightFlush() {
+        Hand handUnderTest = new Hand("9S TS JS QS KS");
+        assertEquals(true, handUnderTest.isStraightFlush());
+        
+        handUnderTest = new Hand("2S 8S AS QS 3S");
+        assertEquals(false, handUnderTest.isStraightFlush());
+        
+        handUnderTest = new Hand("8S 9S TC JS QS");
+        assertEquals(false, handUnderTest.isStraightFlush());
     }
 
 }

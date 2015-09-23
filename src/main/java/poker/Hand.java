@@ -43,5 +43,9 @@ public class Hand {
         cards.forEach(card -> suitsWithinHand.add(card.getSuit()));
         return (suitsWithinHand.size() == 1) ? true : false;
     }
+    
+    public boolean isStraightFlush() {
+        return (this.isStraight() && this.isFlush());
+    }
 
 }
