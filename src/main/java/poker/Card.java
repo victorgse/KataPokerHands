@@ -6,7 +6,27 @@ import java.util.Map;
 public class Card implements Comparable<Card> {
 
     public enum Value {
-        TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING, ACE
+        TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING, ACE;
+        
+        @Override
+        public String toString() {
+          switch(this) {
+            case ACE: return "Ace";
+            case KING: return "King";
+            case QUEEN: return "Queen";
+            case JACK: return "Jack";
+            case TEN: return "10";
+            case NINE: return "9";
+            case EIGHT: return "8";
+            case SEVEN: return "7";
+            case SIX: return "6";
+            case FIVE: return "5";
+            case FOUR: return "4";
+            case THREE: return "3";
+            case TWO: return "2";
+            default: throw new IllegalArgumentException();
+          }
+        }
     }
     
     public enum Suit {

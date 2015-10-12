@@ -11,7 +11,23 @@ import poker.Card.Suit;
 public class Hand {
     
     public enum Rank {
-        HIGHCARD, PAIR, TWOPAIRS, THREEOFAKIND, STRAIGHT, FLUSH, FULLHOUSE, FOUROFAKIND, STRAIGHTFLUSH
+        HIGHCARD, PAIR, TWOPAIRS, THREEOFAKIND, STRAIGHT, FLUSH, FULLHOUSE, FOUROFAKIND, STRAIGHTFLUSH;
+        
+        @Override
+        public String toString() {
+          switch(this) {
+            case STRAIGHTFLUSH: return "straight flush";
+            case FOUROFAKIND: return "four of a kind";
+            case FULLHOUSE: return "full house";
+            case FLUSH: return "flush";
+            case STRAIGHT: return "straight";
+            case THREEOFAKIND: return "three of a kind";
+            case TWOPAIRS: return "two pairs";
+            case PAIR: return "pair";
+            case HIGHCARD: return "high card";
+            default: throw new IllegalArgumentException();
+          }
+        }
     }
     
     private Set<Card> cards = new HashSet<Card>();
