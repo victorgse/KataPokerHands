@@ -32,12 +32,12 @@ sonarRunner {
 
 sonarRunner {
     sonarProperties {
-        property 'sonar.projectName', 'KataTexasHoldEm'
+        property 'sonar.projectName', 'KataPokerHands'
     }
 }
 
 jar {
-    baseName = 'kata-texas-hold-em'
+    baseName = 'kata-poker-hands'
     version =  '0.1.0'
 }
 

@@ -1,1 +1,1 @@
-# KataTexasHoldEm
+# KataPokerHands
